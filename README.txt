@@ -1,9 +1,9 @@
 # python
 # a single line comment in python like in bash !like in sql || CSharp
-''' '''
+'''
 This is a multiline
 comment.
-''' '''
+'''
 
 
 import all math operations
