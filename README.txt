@@ -10,7 +10,9 @@ import all math operations
 import sys
 import os
 import random
-from math import *
+from math import * 
+from functools import lru_cache
+	
 
 #text
 print("Hello ")
@@ -106,23 +108,6 @@ print(coordinates[0])
 coordinates=[(3,1),(5,6),(9,0)]
 print(coordinates[1][1])
 
-#functions
-def _Function_():
-    print("this helllooooo is printed ")
-    return False
-print("this helloo will not be a part of the code")
-print ("because the indent (la tabulation) is not present => function end :)")
-
-returned=_Function_()
-print(returned)
-
-def _func_(A, B):
-    print(A+B)
-_func_(3, 5)
-def _func_(Age, B):
-    print(str(Age)+" is the age of:"+B)
-_func_(21, "Mohamed")
-
 #if statements
 print("When I wake up")
 hungry=True
@@ -191,6 +176,44 @@ testfile.close()
 
 ##Delete
 os.remove("text.txt")
+
+#functions
+def _Function_():
+    print("this helllooooo is printed ")
+    return False
+    
+print("this helloo will not be a part of the code")
+print ("because the indent (la tabulation) is not present => function end :)")
+
+returned=_Function_()
+print(returned)
+
+def _func_(A, B):
+    print(A+B)
+_func_(3, 5)
+def _func_(Age, B):
+    print(str(Age)+" is the age of:"+B)
+_func_(21, "Mohamed")
+
+'''
+Example: optimized recursive function(Fibo) 
+         instead of using a dictionnary as a cache
+         python provides a function called lru (Least Recently Used Cache)      
+         > from functools import lru_cache
+'''
+@lru_cache(maxsize = 1000)
+
+def fibonacci(n)
+	if n==1:
+	retrun 1
+	elif n==2:
+	return 1
+	elif n > 2:
+	return fibonacci(n-1) + fibonacci(n-2)
+
+for n in range(1, 1000):
+	print(n," : ", fibonacci(n))
+
 
 #Objects
 class Animal:
