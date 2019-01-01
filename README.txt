@@ -204,12 +204,17 @@ Example: optimized recursive function(Fibo)
 @lru_cache(maxsize = 1000)
 
 def fibonacci(n)
+	#check if type is a +int & give a helpful error message
+	if type(n) != int:
+		raise TypeError("n must be a positive int")
+	if n < 1:
+		raise ValueError("n must be a positive int")
 	if n==1:
-	retrun 1
+		retrun 1
 	elif n==2:
-	return 1
+		return 1
 	elif n > 2:
-	return fibonacci(n-1) + fibonacci(n-2)
+		return fibonacci(n-1) + fibonacci(n-2)
 
 for n in range(1, 1000):
 	print(n," : ", fibonacci(n))
